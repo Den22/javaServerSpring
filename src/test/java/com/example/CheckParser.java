@@ -1,8 +1,6 @@
 package com.example;
 
-import org.apache.tomcat.util.buf.Utf8Encoder;
 import org.junit.Test;
-import org.springframework.test.web.reactive.server.EntityExchangeResult;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import java.io.UnsupportedEncodingException;
@@ -10,10 +8,10 @@ import java.net.URLEncoder;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
-public class FunctionalWebApplicationTests {
+public class CheckParser {
 
     private final WebTestClient webTestClient =
-            WebTestClient.bindToRouterFunction(FunctionalWebApplication.getRouter()).build();
+            WebTestClient.bindToRouterFunction(WebApplication.getRouter()).build();
 
     @Test
     public void testHello() {

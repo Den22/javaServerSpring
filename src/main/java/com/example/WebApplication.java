@@ -17,13 +17,13 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.*;
 
-public class FunctionalWebApplication {
+public class WebApplication {
 
     public static void main(String[] args) throws IOException, LifecycleException, InterruptedException {
         RouterFunction router = getRouter();
         HttpHandler httpHandler = RouterFunctions.toHttpHandler(router);
         HttpServer
-                .create("localhost", 8082)
+                .create("localhost", 8080)
                 .newHandler(new ReactorHttpHandlerAdapter(httpHandler))
                 .block();
         Thread.currentThread().join();
